@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mcddb.data.User" table="user" schema="public" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="username" type="string">
+            <column name="username"/>
+        </property>
+        <property name="password" type="string">
+            <column name="password"/>
+        </property>
+        <property name="role" type="string">
+            <column name="role"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname"/>
+        </property>
+        <property name="insertby" type="integer">
+            <column name="insertby"/>
+        </property>
+        <property name="insertdate" type="date">
+            <column name="insertdate" length="13"/>
+        </property>
+    </class>
+</hibernate-mapping>

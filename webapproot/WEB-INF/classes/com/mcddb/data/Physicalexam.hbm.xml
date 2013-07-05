@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mcddb.data.Physicalexam" table="physicalexam" schema="public" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="serolinknumber" type="string">
+            <column name="serolinknumber"/>
+        </property>
+        <property name="headandneck" type="string">
+            <column name="headandneck"/>
+        </property>
+        <property name="ent" type="string">
+            <column name="ent"/>
+        </property>
+        <property name="skinandappendages" type="string">
+            <column name="skinandappendages"/>
+        </property>
+        <property name="respiratory" type="string">
+            <column name="respiratory"/>
+        </property>
+        <property name="cardiovascular" type="string">
+            <column name="cardiovascular"/>
+        </property>
+        <property name="abdomen" type="string">
+            <column name="abdomen"/>
+        </property>
+        <property name="cns" type="string">
+            <column name="cns"/>
+        </property>
+        <property name="limbsandmusculoskeletal" type="string">
+            <column name="limbsandmusculoskeletal"/>
+        </property>
+        <property name="insertby" type="integer">
+            <column name="insertby"/>
+        </property>
+        <property name="insertdate" type="date">
+            <column name="insertdate" length="13"/>
+        </property>
+        <property name="clinician" type="string">
+            <column name="clinician"/>
+        </property>
+    </class>
+</hibernate-mapping>

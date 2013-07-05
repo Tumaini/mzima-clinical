@@ -1,0 +1,63 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mcddb.data.Pharmacovigilance" table="pharmacovigilance" schema="public" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="serolinknumber" type="string">
+            <column name="serolinknumber"/>
+        </property>
+        <property name="identifymeds" type="string">
+            <column name="identifymeds"/>
+        </property>
+        <property name="meds1" type="string">
+            <column name="meds1"/>
+        </property>
+        <property name="meds2" type="string">
+            <column name="meds2"/>
+        </property>
+        <property name="meds3" type="string">
+            <column name="meds3"/>
+        </property>
+        <property name="meds4" type="string">
+            <column name="meds4"/>
+        </property>
+        <property name="meds5" type="string">
+            <column name="meds5"/>
+        </property>
+        <property name="timeonmeds1" type="integer">
+            <column name="timeonmeds1"/>
+        </property>
+        <property name="timeonmeds2" type="integer">
+            <column name="timeonmeds2"/>
+        </property>
+        <property name="timeonmeds3" type="integer">
+            <column name="timeonmeds3"/>
+        </property>
+        <property name="timeonmeds4" type="integer">
+            <column name="timeonmeds4"/>
+        </property>
+        <property name="timeonmeds5" type="integer">
+            <column name="timeonmeds5"/>
+        </property>
+        <property name="unitoftime" type="string">
+            <column name="unitoftime"/>
+        </property>
+        <property name="medsideffects" type="string">
+            <column name="medsideffects"/>
+        </property>
+        <property name="sideeffectoutcome" type="string">
+            <column name="sideeffectoutcome"/>
+        </property>
+        <property name="insertby" type="integer">
+            <column name="insertby"/>
+        </property>
+        <property name="insertdate" type="date">
+            <column name="insertdate" length="13"/>
+        </property>
+        <property name="clinician" type="string">
+            <column name="clinician"/>
+        </property>
+    </class>
+</hibernate-mapping>

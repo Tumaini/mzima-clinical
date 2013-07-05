@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+
+<!-- Generated 07/03/2013 16:36:53
+
+Configuration for 'mcdDB' database service
+
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+    <bean 
+        id="mcdDB"
+        class="com.mcddb.McdDB"
+        scope="singleton"
+        lazy-init="true">
+        <property name="dataServiceManager">
+            <ref bean="mcdDBDataService"/>
+        </property>
+        <property name="taskManager">
+            <ref bean="mcdDBTaskMgr"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:mcdDB.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean 
+        id="mcdDBDataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+        lazy-init="true">
+        <property name="driverClassName" value="${mcdDB.driverClassName}"/>
+        <property name="url" value="${mcdDB.connectionUrl}"/>
+        <property name="username" value="${mcdDB.username}"/>
+        <property name="password" value="${mcdDB.password}"/>
+    </bean>
+
+
+    <bean 
+        id="mcdDBTxMgr" 
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        lazy-init="true">
+        <property name="sessionFactory">
+            <ref bean="mcdDBSessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        id="mcdDBHibernateTemplate"
+        class="org.springframework.orm.hibernate3.HibernateTemplate"
+        lazy-init="true">
+        <property name="sessionFactory"> 
+            <ref bean="mcdDBSessionFactory"/>
+        </property>
+    </bean>  
+
+
+    <bean 
+        id="mcdDBSessionFactory" 
+        class="com.wavemaker.runtime.data.spring.ConfigurationAndSessionFactoryBean"
+        lazy-init="true">
+
+        <!-- A unique name for this SessionFactory's configuration -->
+        <property name="name" value="mcdDB"/>
+        <property name="dataSource" ref="mcdDBDataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${mcdDB.dialect}</prop>
+                <prop key="hibernate.transaction.factory_class">
+                    org.hibernate.transaction.JDBCTransactionFactory
+                </prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                
+            </props> 
+        </property>
+
+        <property name="mappingResources">
+            <list>
+
+<value>com/mcddb/data/Sideeffects.hbm.xml</value>
+<value>com/mcddb/data/Otherreferralreason.hbm.xml</value>
+<value>com/mcddb/data/ClinicalComplaints.hbm.xml</value>
+<value>com/mcddb/data/Referral.hbm.xml</value>
+<value>com/mcddb/data/Tb.hbm.xml</value>
+<value>com/mcddb/data/Cervicalcancer.hbm.xml</value>
+<value>com/mcddb/data/Otherreferralfacility.hbm.xml</value>
+<value>com/mcddb/data/SideEffectOutcomes.hbm.xml</value>
+<value>com/mcddb/data/Cvd.hbm.xml</value>
+<value>com/mcddb/data/Pharmacovigilance.hbm.xml</value>
+<value>com/mcddb/data/Hiv.hbm.xml</value>
+<value>com/mcddb/data/ClinicalMain.hbm.xml</value>
+<value>com/mcddb/data/Physicalexam.hbm.xml</value>
+<value>com/mcddb/data/Diabetes.hbm.xml</value>
+<value>com/mcddb/data/Hypertension.hbm.xml</value>
+<value>com/mcddb/data/User.hbm.xml</value>
+
+<value>com/mcddb/data/Sideeffects.ql.xml</value>
+<value>com/mcddb/data/app-queries.ql.xml</value>
+
+            </list>
+        </property>
+
+    </bean>
+
+
+    <!-- the data service bean instance is injected into the service bean -->
+    <bean 
+        id="mcdDBDataService" 
+        class="com.wavemaker.runtime.data.spring.SpringDataServiceManager"
+        lazy-init="true">
+        <constructor-arg>
+            <!-- the value of the "name" property of the SessionFactory -->
+            <value>mcdDB</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="mcdDBHibernateTemplate"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="mcdDBTxMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="mcdDBTaskMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="useIndividualCRUDOperations" value="false"/>
+                <entry key="refreshEntities" value=""/> 
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+    <bean 
+        id="mcdDBTaskMgr"
+        class="com.wavemaker.runtime.data.DefaultTaskManager"
+        lazy-init="true"/>
+
+    <bean class="com.wavemaker.runtime.service.events.EventWire"
+        lazy-init="false">
+        <property name="serviceWire" ref="mcdDBServiceWire"/>
+        <property name="eventListener">
+            <bean class="com.wavemaker.runtime.data.DataServiceEventListener"/>
+        </property>
+    </bean>
+
+    <bean id="mcdDBServiceWire"
+        class="com.wavemaker.runtime.service.reflect.ReflectServiceWire"
+        lazy-init="false" scope="singleton">
+        <property name="serviceId" value="mcdDB"/>
+        <property name="serviceType" ref="DataService"/>
+    </bean>
+
+</beans>

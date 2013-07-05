@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mcddb.data.SideEffectOutcomes" table="side_effect_outcomes" schema="public" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="participantno" type="string">
+            <column name="participantno"/>
+        </property>
+        <property name="outcome" type="string">
+            <column name="outcome"/>
+        </property>
+        <property name="insertby" type="integer">
+            <column name="insertby"/>
+        </property>
+        <property name="insertdate" type="date">
+            <column name="insertdate" length="13"/>
+        </property>
+        <property name="clinician" type="string">
+            <column name="clinician"/>
+        </property>
+    </class>
+</hibernate-mapping>

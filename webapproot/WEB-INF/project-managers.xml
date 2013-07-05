@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.8.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:cloud="http://schema.cloudfoundry.org/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean class="com.wavemaker.runtime.service.TypeManager" parent="typeManagerBase" scope="singleton" id="typeManager">
+        <property name="types">
+            <map merge="true">
+                <entry key="mcdDB">
+                    <list>
+                        <value>com.mcddb.data.Cervicalcancer</value>
+                        <value>com.mcddb.data.ClinicalComplaints</value>
+                        <value>com.mcddb.data.ClinicalMain</value>
+                        <value>com.mcddb.data.Cvd</value>
+                        <value>com.mcddb.data.Diabetes</value>
+                        <value>com.mcddb.data.Hiv</value>
+                        <value>com.mcddb.data.Hypertension</value>
+                        <value>com.mcddb.data.Otherreferralfacility</value>
+                        <value>com.mcddb.data.Otherreferralreason</value>
+                        <value>com.mcddb.data.Pharmacovigilance</value>
+                        <value>com.mcddb.data.Physicalexam</value>
+                        <value>com.mcddb.data.Referral</value>
+                        <value>com.mcddb.data.SideEffectOutcomes</value>
+                        <value>com.mcddb.data.Sideeffects</value>
+                        <value>com.mcddb.data.Tb</value>
+                        <value>com.mcddb.data.User</value>
+                    </list>
+                </entry>
+                <entry key="securityService">
+                    <list/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

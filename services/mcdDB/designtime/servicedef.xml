@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="mcdDB" class="com.mcddb.McdDB" CRUDService="true" type="DataService" springFile="mcdDB.spring.xml">
+    <operation operationType="hqlquery" name="getSideeffectsById">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.mcddb.data.Sideeffects" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.mcddb.data.Cervicalcancer" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="knownpatient" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="symptoms" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referral" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.ClinicalComplaints" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="participantno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="complaint" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.ClinicalMain" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="date" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="age" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bmi" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="clinicalcomplaint" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="pregnant" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Cvd" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="knowncvcondition" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intreatment" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="riskfactors" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="symptoms" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="physicalexam" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referral" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Diabetes" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="wanttoknowresult" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bloodsugarlevel" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="knowndiabetic" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ontreatment" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="symptoms" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="physicalexam" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referred" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Hiv" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="hivresult" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="priorknowledgeofstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="physicalexam" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="whostage" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reasonforstage" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="participanttobereferred" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Hypertension" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="wanttoknowresults" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="avgsystolicbloodpressure" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="knownhypertensive" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intreatment" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="symptoms" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="physicalexam" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referral" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="avgdiastolicbloodpressure" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Otherreferralfacility" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="facility" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Otherreferralreason" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Pharmacovigilance" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="identifymeds" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="meds1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="meds2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="meds3" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="meds4" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="meds5" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="timeonmeds1" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="timeonmeds2" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="timeonmeds3" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="timeonmeds4" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="timeonmeds5" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="unitoftime" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="medsideffects" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sideeffectoutcome" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Physicalexam" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="headandneck" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ent" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="skinandappendages" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="respiratory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cardiovascular" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="abdomen" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cns" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="limbsandmusculoskeletal" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Referral" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="facility" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.SideEffectOutcomes" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="participantno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="outcome" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Sideeffects" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="participantno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sideeffect" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.Tb" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="knowntbpatient" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ontbtreatment" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="treatedlast12months" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="symptoms" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="physicalexam" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="participanttobereferred" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.mcddb.data.User" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

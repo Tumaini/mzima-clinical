@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mcddb.data.Hypertension" table="hypertension" schema="public" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="wanttoknowresults" type="string">
+            <column name="wanttoknowresults"/>
+        </property>
+        <property name="avgsystolicbloodpressure" type="double">
+            <column name="avgsystolicbloodpressure" precision="17"/>
+        </property>
+        <property name="knownhypertensive" type="string">
+            <column name="knownhypertensive"/>
+        </property>
+        <property name="intreatment" type="string">
+            <column name="intreatment"/>
+        </property>
+        <property name="symptoms" type="string">
+            <column name="symptoms"/>
+        </property>
+        <property name="physicalexam" type="string">
+            <column name="physicalexam"/>
+        </property>
+        <property name="referral" type="string">
+            <column name="referral"/>
+        </property>
+        <property name="serolinknumber" type="string">
+            <column name="serolinknumber"/>
+        </property>
+        <property name="avgdiastolicbloodpressure" type="double">
+            <column name="avgdiastolicbloodpressure" precision="17"/>
+        </property>
+        <property name="insertby" type="integer">
+            <column name="insertby"/>
+        </property>
+        <property name="insertdate" type="date">
+            <column name="insertdate" length="13"/>
+        </property>
+        <property name="clinician" type="string">
+            <column name="clinician"/>
+        </property>
+    </class>
+</hibernate-mapping>

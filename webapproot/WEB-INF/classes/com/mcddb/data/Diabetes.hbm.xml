@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mcddb.data.Diabetes" table="diabetes" schema="public" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="wanttoknowresult" type="string">
+            <column name="wanttoknowresult"/>
+        </property>
+        <property name="bloodsugarlevel" type="double">
+            <column name="bloodsugarlevel" precision="17"/>
+        </property>
+        <property name="knowndiabetic" type="string">
+            <column name="knowndiabetic"/>
+        </property>
+        <property name="ontreatment" type="string">
+            <column name="ontreatment"/>
+        </property>
+        <property name="symptoms" type="string">
+            <column name="symptoms"/>
+        </property>
+        <property name="physicalexam" type="string">
+            <column name="physicalexam"/>
+        </property>
+        <property name="referred" type="string">
+            <column name="referred"/>
+        </property>
+        <property name="serolinknumber" type="string">
+            <column name="serolinknumber"/>
+        </property>
+        <property name="insertby" type="integer">
+            <column name="insertby"/>
+        </property>
+        <property name="insertdate" type="date">
+            <column name="insertdate" length="13"/>
+        </property>
+        <property name="clinician" type="string">
+            <column name="clinician"/>
+        </property>
+    </class>
+</hibernate-mapping>
