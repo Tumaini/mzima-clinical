@@ -7,6 +7,7 @@ dojo.declare("Referral", wm.Page, {
 
     referralSaveButtonClick: function(inSender) {
         try {
+            this.referralLiveForm1.saveDataIfValid();
             app.toGeneral.update();
         } catch (e) {}
     },
