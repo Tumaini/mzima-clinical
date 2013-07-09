@@ -79,14 +79,11 @@ dojo.declare("Cvd", wm.Page, {
     },
     checkboxSet2Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 		try{
-            alert(this.checkboxSet2.getDataValue());
             if(this.checkboxSet2.getDataValue()!='NONE' && this.checkboxSet2.getDataValue().length >0){
                 this.checkboxSet1.setDisabled(false);
                 this.checkboxSet1.setRequired(true);
-                alert("NOT NONE");
             }else{
                 if(this.checkboxSet2.getDataValue()=='NONE'){
-                    alert("NONE");
                 this.checkboxSet1.setDisabled(true);
                 this.checkboxSet1.setRequired(false);
                 }
