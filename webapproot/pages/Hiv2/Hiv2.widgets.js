@@ -53,20 +53,21 @@ Hiv2.widgets = {
 												wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, {}]
 											}]
 										}],
-										radioSet1: ["wm.RadioSet", {"caption":"Participant’s HIV test results","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"82px","displayField":"dataValue","formField":"hivresult","height":"82px","options":"POSITIVE,NEGATIVE,DID NOT TEST","required":true,"width":"100%"}, {"onchange":"radioSet1Change"}],
+										radioSet1: ["wm.RadioSet", {"caption":"Participants HIV Test results","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"90px","displayField":"dataValue","formField":"hivresult","height":"90px","options":"POSITIVE,NEGATIVE,DID NOT TEST","required":true,"width":"100%"}, {"onchange":"radioSet1Change"}],
 										radioSet2: ["wm.RadioSet", {"caption":"Participant’s prior knowledge of his or her HIV status and their care status","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"135px","displayField":"dataValue","formField":"priorknowledgeofstatus","height":"135px","options":"Known positive and in follow up for care and treatment,Known positive BUT NOT in care and treatment followup,Known negative,Did not know status before today but now knows,Unknown status (Did not test today)","required":true,"width":"100%"}, {"onchange":"radioSet2Change"}],
 										radioSet3: ["wm.RadioSet", {"caption":"Is physical examination to be performed? (For HIV pos or not tested today or with significant complaints)","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"98px","displayField":"dataValue","formField":"physicalexam","height":"98px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet3Change"}],
-										radioSet4: ["wm.RadioSet", {"caption":"WHO stage (if Q9 is 1 or 3)","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"113px","displayField":"dataValue","formField":"whostage","height":"113px","options":"STAGE 1,STAGE 2,STAGE 3,STAGE 4","showing":false,"width":"100%"}, {}],
-										radioSet5: ["wm.RadioSet", {"caption":"Reason for stage","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"114px","displayField":"dataValue","formField":"reasonforstage","height":"114px","options":"Primary HIV infection,Clinically asymptomatic stage,Symptomatic HIV infection,Progression from HIV to AIDS","showing":false,"width":"100%"}, {}],
+										radioSet4: ["wm.RadioSet", {"caption":"WHO stage (if Q9 is 1 or 3)","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"140px","displayField":"dataValue","formField":"whostage","height":"140px","options":"STAGE 1,STAGE 2,STAGE 3,STAGE 4,NONE","showing":false,"width":"100%"}, {"onchange":"radioSet4Change"}],
+										checkboxSet1: ["wm.CheckboxSet", {"caption":"Reason for Stage","captionSize":"140px","desktopHeight":"220px","emptyValue":"null","formField":"reasonforstage","height":"220px","showing":false,"width":"100%"}, {}],
 										radioSet6: ["wm.RadioSet", {"caption":"Participant to be referred?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"participanttobereferred","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {}],
 										number1: ["wm.Number", {"caption":"Insert By","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"insertby","height":"26px","width":"100%"}, {}, {
 											binding: ["wm.Binding", {}, {}, {
 												wire: ["wm.Wire", {"expression":undefined,"source":"app.loggedInUser.dataValue","targetProperty":"defaultInsert"}, {}]
 											}]
 										}],
-										clinician: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","required":true,"width":"50%"}, {}, {
+										selectMenu1: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu1Change"}, {
 											binding: ["wm.Binding", {}, {}, {
-												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+												wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 											}]
 										}]
 									}],

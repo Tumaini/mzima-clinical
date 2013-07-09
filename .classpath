@@ -64,7 +64,7 @@
 	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/stringtemplate-3.2.jar"/>
 	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/wavemaker-common-6.5.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/wavemaker-json-6.5.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/wavemaker-runtime-6.5.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/wavemaker-runtime-6.5.0.RELEASE.jar" sourcepath="C:/Users/USER/Downloads/wavemaker-6_5_0_M3/wavemaker-6_5_0_M3/wavemaker/wavemaker-runtime"/>
 	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/wstx-asl-3.2.3.jar"/>
 	<classpathentry kind="lib" path="webapproot/WEB-INF/lib/XmlSchema-1.3.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>

@@ -23,7 +23,7 @@ Pharmacovigilance.widgets = {
 				}],
 				sideeffectoutcomesLayers: ["wm.BreadcrumbLayers", {}, {}, {
 					Sideeffectoutcomes_List: ["wm.Layer", {"borderColor":"","caption":"Side Effect Outcomes List","horizontalAlign":"left","themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"sideeffectoutcomesDojoGrid.deselectAll"}, {
-						sideeffectoutcomesDojoGrid: ["wm.DojoGrid", {"columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>Participantno: \" + ${participantno} + \"</div>\"\n+ \"<div class='MobileRow'>Outcome: \" + ${outcome} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"participantno","title":"Participantno","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"outcome","title":"Outcome","width":"100%","align":"left","formatFunc":"","mobileColumn":false},{"show":true,"field":"insertby","title":"Insertby","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},{"show":true,"field":"clinician","title":"Clinician","width":"100%","align":"left","formatFunc":"","mobileColumn":false}],"dsType":"com.mcddb.data.SideEffectOutcomes","height":"100%","margin":"4"}, {"onSelect":"sideeffectoutcomesLivePanel1.popupLivePanelEdit"}, {
+						sideeffectoutcomesDojoGrid: ["wm.DojoGrid", {"columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>Id: \" + ${id} + \"</div>\"\n+ \"<div class='MobileRow'>Participantno: \" + ${participantno} + \"</div>\"\n+ \"<div class='MobileRow'>Outcome: \" + ${outcome} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":true,"field":"id","title":"Id","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"participantno","title":"Participantno","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"outcome","title":"Outcome","width":"100%","displayType":"Text","align":"left","formatFunc":""},{"show":true,"field":"insertby","title":"Insertby","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},{"show":true,"field":"clinician","title":"Clinician","width":"100%","displayType":"Text","align":"left","formatFunc":""}],"dsType":"com.mcddb.data.SideEffectOutcomes","height":"100%","margin":"4"}, {"onSelect":"sideeffectoutcomesLivePanel1.popupLivePanelEdit"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":undefined,"source":"sideeffectoutcomesLiveVariable2","targetProperty":"dataSet"}, {}]
 							}]
@@ -50,9 +50,10 @@ Pharmacovigilance.widgets = {
 									wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, {}]
 								}]
 							}],
-							clinician1: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"50%"}, {}, {
+							selectMenu7: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu7Change"}, {
 								binding: ["wm.Binding", {}, {}, {
-									wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+									wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+									wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 								}]
 							}]
 						}],
@@ -90,7 +91,7 @@ Pharmacovigilance.widgets = {
 				}],
 				sideeffectsLayers: ["wm.BreadcrumbLayers", {}, {}, {
 					Sideeffects_List: ["wm.Layer", {"borderColor":"","caption":"Sideeffects List","horizontalAlign":"left","themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"sideeffectsDojoGrid.deselectAll"}, {
-						sideeffectsDojoGrid: ["wm.DojoGrid", {"columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","editorProps":{"restrictValues":true},"expression":"\"<div class='MobileRowTitle'>Participantno: \" + ${participantno} + \"</div>\"\n+ \"<div class='MobileRow'>Sideeffect: \" + ${sideeffect} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"participantno","title":"Participantno","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"sideeffect","title":"Sideeffect","width":"100%","align":"left","formatFunc":"","mobileColumn":false},{"show":true,"field":"insertby","title":"Insertby","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},{"show":true,"field":"clinician","title":"Clinician","width":"100%","align":"left","formatFunc":"","mobileColumn":false}],"dsType":"com.mcddb.data.Sideeffects","height":"100%","margin":"4"}, {"onSelect":"sideeffectsLivePanel1.popupLivePanelEdit"}, {
+						sideeffectsDojoGrid: ["wm.DojoGrid", {"columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","editorProps":{"restrictValues":true},"expression":"\"<div class='MobileRowTitle'>Id: \" + ${id} + \"</div>\"\n+ \"<div class='MobileRow'>Participantno: \" + ${participantno} + \"</div>\"\n+ \"<div class='MobileRow'>Sideeffect: \" + ${sideeffect} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":true,"field":"id","title":"Id","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"participantno","title":"Participantno","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"sideeffect","title":"Sideeffect","width":"100%","displayType":"Text","align":"left","formatFunc":""},{"show":true,"field":"insertby","title":"Insertby","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},{"show":true,"field":"clinician","title":"Clinician","width":"100%","displayType":"Text","align":"left","formatFunc":""}],"dsType":"com.mcddb.data.Sideeffects","height":"100%","margin":"4"}, {"onSelect":"sideeffectsLivePanel1.popupLivePanelEdit"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":undefined,"source":"sideeffectsLiveVariable3","targetProperty":"dataSet"}, {}]
 							}]
@@ -100,7 +101,7 @@ Pharmacovigilance.widgets = {
 						}]
 					}],
 					Edit_Sideeffects: ["wm.Layer", {"autoScroll":true,"borderColor":"","caption":"Edit Sideeffects","horizontalAlign":"left","themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
-						sideeffectsLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"height":"100%","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onSuccess":"sideeffectsLivePanel1.popupLiveFormSuccess"}, {
+						sideeffectsLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"height":"327px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onSuccess":"sideeffectsLivePanel1.popupLiveFormSuccess"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":undefined,"source":"sideeffectsDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
 							}],
@@ -117,9 +118,10 @@ Pharmacovigilance.widgets = {
 									wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, {}]
 								}]
 							}],
-							clinician2: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"50%"}, {}, {
+							selectMenu8: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu8Change"}, {
 								binding: ["wm.Binding", {}, {}, {
-									wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+									wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+									wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 								}]
 							}]
 						}],
@@ -222,9 +224,10 @@ Pharmacovigilance.widgets = {
 												wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, {}]
 											}]
 										}],
-										clinician: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"50%"}, {}, {
+										selectMenu6: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu6Change"}, {
 											binding: ["wm.Binding", {}, {}, {
-												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+												wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 											}]
 										}]
 									}],

@@ -54,8 +54,8 @@ Hypertension.widgets = {
 											}]
 										}],
 										radioSet1: ["wm.RadioSet", {"caption":"Does participant want to know blood pressure results?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"wanttoknowresults","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet1Change"}],
-										number1: ["wm.Number", {"caption":"Average systolic blood pressure (3 readings) mmHg","captionSize":"270px","dataValue":"","desktopHeight":"35px","emptyValue":"emptyString","formField":"avgsystolicbloodpressure","height":"35px","helpText":"Pressure should be between 55 and 250 mmHg","maximum":250,"minimum":55,"placeHolder":"Pressure should be between 55 and 250 mmHg","required":true,"singleLine":false,"width":"70%"}, {}],
-										number2: ["wm.Number", {"caption":"Average diastolic blood pressure (3 readings) mmHg","captionSize":"270px","dataValue":"","desktopHeight":"35px","emptyValue":"emptyString","formField":"avgdiastolicbloodpressure","height":"35px","helpText":"Pressure should be between 55 and 250 mmHg","maximum":250,"minimum":55,"placeHolder":"Pressure should be between 55 and 250 mmHg","required":true,"singleLine":false,"width":"70%"}, {}],
+										number1: ["wm.Number", {"caption":"Average systolic blood pressure (3 readings) mmHg","captionSize":"270px","dataValue":"","desktopHeight":"35px","emptyValue":"emptyString","formField":"avgsystolicbloodpressure","height":"35px","helpText":"Pressure should be between 19 and 251 mmHg","maximum":251,"minimum":19,"placeHolder":"Pressure should be between 19 and 251 mmHg","required":true,"singleLine":false,"width":"70%"}, {}],
+										number2: ["wm.Number", {"caption":"Average diastolic blood pressure (3 readings) mmHg","captionSize":"270px","dataValue":"","desktopHeight":"35px","emptyValue":"emptyString","formField":"avgdiastolicbloodpressure","height":"35px","helpText":"Pressure should be between 19 and 251 mmHg","maximum":251,"minimum":19,"placeHolder":"Pressure should be between 19 and 251 mmHg","required":true,"singleLine":false,"width":"70%"}, {}],
 										radioSet2: ["wm.RadioSet", {"caption":"Is participant a known hypertensive?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"knownhypertensive","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet2Change"}],
 										radioSet3: ["wm.RadioSet", {"caption":"If ‘yes’ is the participant on treatment/in care?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"intreatment","height":"56px","options":"YES,NO","showing":false,"width":"100%"}, {}],
 										checkboxSet1: ["wm.CheckboxSet", {"caption":"If the participant hypertensive or has abnormal blood pressure reading does he/she have any of the following symptoms?","captionSize":"140px","dataField":"dataValue","desktopHeight":"236px","displayField":"dataValue","emptyValue":"null","formField":"symptoms","height":"236px","options":"Severe headache,Fatigue or confusion,Vision problems,Chest pain,Difficulty in breathing,Irregular heart beat,Blood in urine,Pounding in your chest neck or ears,NONE","required":true,"width":"100%"}, {"onchange":"checkboxSet1Change"}],
@@ -66,9 +66,10 @@ Hypertension.widgets = {
 												wire: ["wm.Wire", {"expression":undefined,"source":"app.loggedInUser.dataValue","targetProperty":"defaultInsert"}, {}]
 											}]
 										}],
-										clinician: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"50%"}, {}, {
+										selectMenu1: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu1Change"}, {
 											binding: ["wm.Binding", {}, {}, {
-												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+												wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 											}]
 										}]
 									}],

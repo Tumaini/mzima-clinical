@@ -29,9 +29,10 @@ Referral.widgets = {
 								wire: ["wm.Wire", {"expression":undefined,"source":"app.loggedInUser.dataValue","targetProperty":"defaultInsert"}, {}]
 							}]
 						}],
-						clinician1: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"90%"}, {}, {
+						selectMenu2: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","readonly":true,"required":true,"width":"90%"}, {"onchange":"selectMenu2Change"}, {
 							binding: ["wm.Binding", {}, {}, {
-								wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+								wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+								wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 							}]
 						}],
 						otherreferralfacilityLiveForm1EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","isCustomized":true,"liveForm":"otherreferralfacilityLiveForm1","lock":false,"operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
@@ -70,7 +71,7 @@ Referral.widgets = {
 		containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
 			otherreferralreasonLivePanel1: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 				otherreferralreasonGridPanel: ["wm.FancyPanel", {"minHeight":220,"title":"Otherreferralreason"}, {}, {
-					otherreferralreasonDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>Serolinknumber: \" + ${serolinknumber} + \"</div>\"\n+ \"<div class='MobileRow'>Reason: \" + ${reason} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"serolinknumber","title":"Serolinknumber","width":"100%","align":"left","formatFunc":"","mobileColumn":false},{"show":true,"field":"reason","title":"Reason","width":"100%","align":"left","formatFunc":"","mobileColumn":false},{"show":true,"field":"insertby","title":"Insertby","width":"80px","align":"right","formatFunc":"","mobileColumn":false},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},{"show":true,"field":"clinician","title":"Clinician","width":"100%","align":"left","formatFunc":"","mobileColumn":false}],"dsType":"com.mcddb.data.Otherreferralreason","height":"100%","margin":"4"}, {}, {
+					otherreferralreasonDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>Id: \" + ${id} + \"</div>\"\n+ \"<div class='MobileRow'>Serolinknumber: \" + ${serolinknumber} + \"</div>\"\n+ \"<div class='MobileRow'>Reason: \" + ${reason} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":true,"field":"id","title":"Id","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"serolinknumber","title":"Serolinknumber","width":"100%","displayType":"Text","align":"left","formatFunc":""},{"show":true,"field":"reason","title":"Reason","width":"100%","displayType":"Text","align":"left","formatFunc":""},{"show":true,"field":"insertby","title":"Insertby","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},{"show":true,"field":"clinician","title":"Clinician","width":"100%","displayType":"Text","align":"left","formatFunc":""}],"dsType":"com.mcddb.data.Otherreferralreason","height":"100%","margin":"4"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"source":"otherreferralreasonLiveVariable1","targetProperty":"dataSet"}, {}]
 						}]
@@ -93,9 +94,10 @@ Referral.widgets = {
 								wire: ["wm.Wire", {"expression":undefined,"source":"app.loggedInUser.dataValue","targetProperty":"defaultInsert"}, {}]
 							}]
 						}],
-						clinician2: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"90%"}, {}, {
+						selectMenu3: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","readonly":true,"required":true,"width":"90%"}, {"onchange":"selectMenu3Change"}, {
 							binding: ["wm.Binding", {}, {}, {
-								wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+								wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+								wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 							}]
 						}],
 						otherreferralreasonLiveForm1EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","isCustomized":true,"liveForm":"otherreferralreasonLiveForm1","lock":false,"operationPanel":"operationPanel2","savePanel":"savePanel2"}, {}, {
@@ -187,9 +189,10 @@ Referral.widgets = {
 												wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, {}]
 											}]
 										}],
-										clinician: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","readonly":true,"width":"50%"}, {}, {
+										selectMenu1: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu1Change"}, {
 											binding: ["wm.Binding", {}, {}, {
-												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+												wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+												wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 											}]
 										}]
 									}],

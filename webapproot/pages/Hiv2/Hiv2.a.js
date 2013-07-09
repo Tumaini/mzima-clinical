@@ -15,25 +15,22 @@ console.error('ERROR IN newButton1Click: ' + e);
 }
 },
 radioSet3Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
-try {
-if (this.radioSet1.getDataValue() == 'DID NOT TEST' || this.radioSet1.getDataValue() == 'POSITIVE') {
-this.radioSet4.show();
-this.radioSet5.show();
-} else {
-this.radioSet4.hide();
-this.radioSet5.hide();
-}
-} catch (e) {}
 },
 radioSet1Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 try {
-if (this.radioSet1.getDataValue() != 'DID NOT TEST' || this.radioSet1.getDataValue() != 'POSITIVE' && this.radioSet4.showing) {
+if (this.radioSet1.getDataValue() =='NEGATIVE' ) {
 this.radioSet4.hide();
-this.radioSet5.hide();
+this.checkboxSet1.hide();
+this.radioSet4.setRequired(false);
+this.checkboxSet1.setRequired(false);
+this.checkboxSet1.clear();
+this.radioSet4.clear();
 }
-if (this.radioSet1.getDataValue() == 'DID NOT TEST' || this.radioSet1.getDataValue() == 'POSITIVE' && this.radioSet3.getDataValue() !== undefined) {
+if (this.radioSet1.getDataValue() == 'DID NOT TEST' || this.radioSet1.getDataValue() == 'POSITIVE') {
 this.radioSet4.show();
+this.radioSet4.setRequired(true);
 this.radioSet5.show();
+this.radioSet5.setRequired(true);
 }
 } catch (e) {}
 },
@@ -60,6 +57,34 @@ dataValue: true
 }
 } catch (g) {}
 app.toTB.update();
+},
+radioSet4Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+try{
+if(this.radioSet4.getDataValue()=='STAGE 1'){
+this.checkboxSet1.setOptions('Asymptomatic,Persistent generalized lymphadenopathy');
+this.checkboxSet1.setRequired(true);
+this.checkboxSet1.setShowing(true);
+}
+if(this.radioSet4.getDataValue()=='STAGE 2'){
+this.checkboxSet1.setOptions('Moderate and unexplained weight loss (<10% of presumed or measured body weight),Recurrent respiratory tract infections (such as sinusitis: bronchitis: otitis media: pharyngitis),Herpes zoster,Recurrent oral ulcerations,Papular pruritic eruptions,Angular cheilitis,Seborrhoeic dermatitis,Fungal finger nail infections');
+this.checkboxSet1.setRequired(true);
+this.checkboxSet1.setShowing(true);
+}
+if(this.radioSet4.getDataValue()=='STAGE 3'){
+this.checkboxSet1.setOptions('Unexplained chronic diarrhoea for longer than one month,Unexplained persistent fever (intermittent or constant for longer than one month),Severe weight loss (>10% of presumed or measured body weight),Oral candidiasis,Oral hairy leukoplakia,Pulmonary tuberculosis (TB) diagnosed in last two years,Severe presumed bacterial infections (e.g. pneumonia; empyema; meningitis; bacteraemia; pyomyositis; bone or joint infection),Acute necrotizing ulcerative stomatitis, gingivitis or periodontitis,Unexplained anaemia (< 80 g/l), and or neutropenia (<500/µl) and or thrombocytopenia (<50 000/ µl) for more than one month');
+this.checkboxSet1.setRequired(true);
+this.checkboxSet1.setShowing(true);
+}
+if(this.radioSet4.getDataValue()=='STAGE 4'){
+this.checkboxSet1.setOptions("HIV wasting syndrome,Pneumocystis pneumonia,Recurrent severe or radiological bacterial pneumonia,Chronic herpes simplex infection (orolabial or genital or anorectal of more than one months duration),Oesophageal candidiasis,Extrapulmonary Tuberculosis,Kaposi’s sarcoma,Central nervous system toxoplasmosis,HIV encephalopathy,Extrapulmonary cryptococcosis including meningitis,Disseminated non-tuberculous mycobacteria infection,Progressive multifocal leukoencephalopathy,Candida of trachea or  bronchi or lungs,Cryptosporidiosis,Isosporiasis,Visceral herpes simplex infection,Cytomegalovirus (CMV) infection (retinitis or of an organ other than liver or spleen or lymph nodes),Any disseminated mycosis (e.g. histoplasmosis or coccidiomycosis or penicilliosis),Recurrent non-typhoidal salmonella septicaemia,Lymphoma (cerebral or B cell non-Hodgkin),Invasive cervical carcinoma,Visceral leishmaniasis");
+this.checkboxSet1.setRequired(true);
+this.checkboxSet1.setShowing(true);
+}
+if(this.radioSet4.getDataValue().length <1){
+this.checkboxSet1.setShowing(false);
+this.checkboxSet1.setRequired(false);
+}
+}catch(e){}
 },
 _end: 0
 });
@@ -119,20 +144,21 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, {}]
 }]
 }],
-radioSet1: ["wm.RadioSet", {"caption":"Participant’s HIV test results","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"82px","displayField":"dataValue","formField":"hivresult","height":"82px","options":"POSITIVE,NEGATIVE,DID NOT TEST","required":true,"width":"100%"}, {"onchange":"radioSet1Change"}],
+radioSet1: ["wm.RadioSet", {"caption":"Participants HIV Test results","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"90px","displayField":"dataValue","formField":"hivresult","height":"90px","options":"POSITIVE,NEGATIVE,DID NOT TEST","required":true,"width":"100%"}, {"onchange":"radioSet1Change"}],
 radioSet2: ["wm.RadioSet", {"caption":"Participant’s prior knowledge of his or her HIV status and their care status","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"135px","displayField":"dataValue","formField":"priorknowledgeofstatus","height":"135px","options":"Known positive and in follow up for care and treatment,Known positive BUT NOT in care and treatment followup,Known negative,Did not know status before today but now knows,Unknown status (Did not test today)","required":true,"width":"100%"}, {"onchange":"radioSet2Change"}],
 radioSet3: ["wm.RadioSet", {"caption":"Is physical examination to be performed? (For HIV pos or not tested today or with significant complaints)","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"98px","displayField":"dataValue","formField":"physicalexam","height":"98px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet3Change"}],
-radioSet4: ["wm.RadioSet", {"caption":"WHO stage (if Q9 is 1 or 3)","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"113px","displayField":"dataValue","formField":"whostage","height":"113px","options":"STAGE 1,STAGE 2,STAGE 3,STAGE 4","showing":false,"width":"100%"}, {}],
-radioSet5: ["wm.RadioSet", {"caption":"Reason for stage","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"114px","displayField":"dataValue","formField":"reasonforstage","height":"114px","options":"Primary HIV infection,Clinically asymptomatic stage,Symptomatic HIV infection,Progression from HIV to AIDS","showing":false,"width":"100%"}, {}],
+radioSet4: ["wm.RadioSet", {"caption":"WHO stage (if Q9 is 1 or 3)","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"140px","displayField":"dataValue","formField":"whostage","height":"140px","options":"STAGE 1,STAGE 2,STAGE 3,STAGE 4,NONE","showing":false,"width":"100%"}, {"onchange":"radioSet4Change"}],
+checkboxSet1: ["wm.CheckboxSet", {"caption":"Reason for Stage","captionSize":"140px","desktopHeight":"220px","emptyValue":"null","formField":"reasonforstage","height":"220px","showing":false,"width":"100%"}, {}],
 radioSet6: ["wm.RadioSet", {"caption":"Participant to be referred?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"participanttobereferred","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {}],
 number1: ["wm.Number", {"caption":"Insert By","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"insertby","height":"26px","width":"100%"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"app.loggedInUser.dataValue","targetProperty":"defaultInsert"}, {}]
 }]
 }],
-clinician: ["wm.Text", {"caption":"Clinician","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"clinician","height":"26px","required":true,"width":"50%"}, {}, {
+selectMenu1: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu1Change"}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}]
+wire: ["wm.Wire", {"expression":undefined,"source":"app.clinician.dataValue","targetProperty":"defaultInsert"}, {}],
+wire1: ["wm.Wire", {"expression":"${app.clinician.dataValue}.length >1","targetProperty":"disabled"}, {}]
 }]
 }]
 }],

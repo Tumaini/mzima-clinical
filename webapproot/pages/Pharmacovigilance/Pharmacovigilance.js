@@ -229,5 +229,14 @@ dojo.declare("Pharmacovigilance", wm.Page, {
             console.error('ERROR IN newButton1Click: ' + e);
         }
 	},
-	_end: 0
+	selectMenu6Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+	  this.selectMenu1Change(inSender, inDisplayValue, inDataValue, inSetByCode);
+	},
+  selectMenu7Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+	  this.selectMenu1Change(inSender, inDisplayValue, inDataValue, inSetByCode);
+	},
+  selectMenu8Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+	  this.selectMenu1Change(inSender, inDisplayValue, inDataValue, inSetByCode);
+	},
+  _end: 0
 });

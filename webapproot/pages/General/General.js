@@ -96,5 +96,8 @@ dojo.declare("General", wm.Page, {
 	selectMenu1Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 		app.clinician.setData({dataValue: this.selectMenu1.getDataValue()});
 	},
-	_end: 0
+	selectMenu2Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+	  this.selectMenu1Change(inSender, inDisplayValue, inDataValue, inSetByCode);
+	},
+  _end: 0
 });
