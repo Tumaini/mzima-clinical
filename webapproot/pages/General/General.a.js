@@ -88,6 +88,17 @@ app.clinician.setData({dataValue: this.selectMenu1.getDataValue()});
 selectMenu2Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 this.selectMenu1Change(inSender, inDisplayValue, inDataValue, inSetByCode);
 },
+bmiRadioChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+try{
+if(this.bmiRadio.getDataValue() =='YES'){
+this.bmiEditor1.setRequired(true);
+this.bmiEditor1.setShowing(true);
+}else{
+this.bmiEditor1.setRequired(false);
+this.bmiEditor1.setShowing(false);
+}
+}catch(e){}
+},
 _end: 0
 });
 
@@ -120,7 +131,7 @@ wire4: ["wm.Wire", {"source":"clinicalcomplaintsSaveButton","targetId":null,"tar
 }],
 clinicalcomplaintsLayers: ["wm.BreadcrumbLayers", {}, {}, {
 Clinicalcomplaints_List: ["wm.Layer", {"borderColor":"","caption":"Clinicalcomplaints List","horizontalAlign":"left","themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"clinicalcomplaintsDojoGrid.deselectAll"}, {
-clinicalcomplaintsDojoGrid: ["wm.DojoGrid", {"columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>Id: \" + ${id} + \"</div>\"\n+ \"<div class='MobileRow'>Participantno: \" + ${participantno} + \"</div>\"\n+ \"<div class='MobileRow'>Complaint: \" + ${complaint} + \"</div>\"\n+ \"<div class='MobileRow'>Insertby: \" + ${insertby} + \"</div>\"\n+ \"<div class='MobileRow'>Insertdate: \" + wm.List.prototype.dateFormatter({}, null,null,null,${insertdate}) + \"</div>\"\n+ \"<div class='MobileRow'>Clinician: \" + ${clinician} + \"</div>\"\n","mobileColumn":true},{"show":true,"field":"id","title":"Id","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"participantno","title":"Participantno","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"complaint","title":"Complaint","width":"100%","displayType":"Text","align":"left","formatFunc":""},{"show":true,"field":"insertby","title":"Insertby","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":true,"field":"insertdate","title":"Insertdate","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},{"show":true,"field":"clinician","title":"Clinician","width":"100%","displayType":"Text","align":"left","formatFunc":""}],"dsType":"com.mcddb.data.ClinicalComplaints","height":"100%","localizationStructure":{},"margin":"4"}, {"onSelect":"clinicalcomplaintsLivePanel1.popupLivePanelEdit"}, {
+clinicalcomplaintsDojoGrid: ["wm.DojoGrid", {"columns":[{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"","mobileColumn":true},{"show":false,"field":"id","title":"Id","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":false,"field":"participantno","title":"Participantno","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":false,"field":"complaint","title":"Complaint","width":"100%","displayType":"Text","align":"left","formatFunc":""},{"show":false,"field":"insertby","title":"Insertby","width":"80px","displayType":"Number","align":"right","formatFunc":""},{"show":false,"field":"insertdate","title":"Insertdate","width":"80px","displayType":"Date","align":"left","formatFunc":"wm_date_formatter"},{"show":false,"field":"clinician","title":"Clinician","width":"100%","displayType":"Text","align":"left","formatFunc":""}],"dsType":"com.mcddb.data.ClinicalComplaints","height":"100%","localizationStructure":{},"margin":"4"}, {"onSelect":"clinicalcomplaintsLivePanel1.popupLivePanelEdit"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"clinicalcomplaintsLiveVariable3","targetProperty":"dataSet"}, {}]
 }]
@@ -228,7 +239,8 @@ dateEditor1: ["wm.DateTime", {"caption":"Date","captionSize":"140px","dateMode":
 serolinknumberEditor1: ["wm.Text", {"caption":"Serolinknumber","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"null","formField":"serolinknumber","height":"26px","required":true,"width":"50%"}, {}],
 selectMenu1: ["wm.SelectMenu", {"caption":"Clinician","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"26px","displayField":"dataValue","formField":"clinician","height":"26px","options":"DNN,GEM,IHU,LAN,SRA,WEL","required":true,"width":"50%"}, {"onchange":"selectMenu1Change"}],
 ageEditor1: ["wm.Number", {"caption":"Age","captionSize":"140px","changeOnKey":true,"dataValue":0,"desktopHeight":"26px","emptyValue":"zero","formField":"age","height":"26px","maximum":110,"minimum":14,"placeHolder":"Valid ages are between 14 and 110","required":true,"width":"50%"}, {}],
-bmiEditor1: ["wm.Number", {"caption":"BMI","captionSize":"140px","changeOnKey":true,"dataValue":0,"desktopHeight":"26px","emptyValue":"zero","formField":"bmi","height":"26px","maximum":35,"minimum":15,"placeHolder":"Valid BMI are between 15 and 35","required":true,"width":"50%"}, {}],
+bmiRadio: ["wm.RadioSet", {"caption":"Has BMI Reading?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","displayValue":"","height":"56px","options":"YES,NO","required":true,"width":"50%"}, {"onchange":"bmiRadioChange"}],
+bmiEditor1: ["wm.Number", {"caption":"BMI","captionSize":"140px","changeOnKey":true,"dataValue":0,"desktopHeight":"26px","emptyValue":"zero","formField":"bmi","height":"26px","maximum":40,"minimum":13,"placeHolder":"Valid BMI are between 13 and 40","showing":false,"width":"50%"}, {}],
 radioSet1: ["wm.RadioSet", {"caption":"Gender","captionSize":"140px","dataField":"dataValue","dataValue":"M","desktopHeight":"65px","displayField":"dataValue","formField":"gender","height":"65px","options":"M,F","required":true,"width":"100%"}, {"onchange":"radioSet1Change"}],
 radioSet2: ["wm.RadioSet", {"caption":"Pregnant","captionSize":"140px","dataField":"dataValue","desktopHeight":"88px","displayField":"dataValue","formField":"pregnant","height":"88px","showing":false,"width":"100%"}, {}],
 radioSet3: ["wm.RadioSet", {"caption":"Does participant have any clinical complaint","captionSize":"140px","dataField":"dataValue","dataValue":"NO","desktopHeight":"60px","displayField":"dataValue","formField":"clinicalcomplaint","height":"60px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet3Change"}],

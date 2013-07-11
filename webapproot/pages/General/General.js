@@ -99,5 +99,16 @@ dojo.declare("General", wm.Page, {
 	selectMenu2Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
 	  this.selectMenu1Change(inSender, inDisplayValue, inDataValue, inSetByCode);
 	},
-  _end: 0
+  bmiRadioChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+		try{
+            if(this.bmiRadio.getDataValue() =='YES'){
+                this.bmiEditor1.setRequired(true);
+                this.bmiEditor1.setShowing(true);
+            }else{
+                this.bmiEditor1.setRequired(false);
+                this.bmiEditor1.setShowing(false);
+            }
+		}catch(e){}
+	},
+	_end: 0
 });
