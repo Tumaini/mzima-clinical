@@ -59,5 +59,66 @@ dojo.declare("Diabetes", wm.Page, {
 
         app.toHypertension.update();
     },
-    _end: 0
+    radioSet4Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+        
+		try{
+            
+            if(this.radioSet4.getDataValue()==='NO'){               
+                
+                this.radioSet1.setDataValue('NOT TESTED');
+                this.radioSet1.setRequired(false);
+                this.radioSet1.setDisabled(true);
+                this.bloodsugarlevelEditor1.setRequired(false);
+                this.bloodsugarlevelEditor1.setDisabled(true);
+                this.radioSet2.setDataValue('NO');
+                this.radioSet2.setRequired(false);
+                this.radioSet2.setDisabled(true);
+                this.checkboxSet1.setDataValue('NONE');
+                this.checkboxSet1.setRequired(false);
+                this.checkboxSet1.setDisabled(true);
+                this.radioSet6.setDataValue('NO');
+                this.radioSet6.setRequired(false);
+                this.radioSet6.setDisabled(true);
+                this.radioSet5.setDataValue('NO');
+                this.radioSet5.setRequired(false);
+                this.radioSet5.setDisabled(true);
+                this.number1.setRequired(false);
+                this.number1.setDisabled(true);
+                if(this.text2.getDataValue().length > 0){
+                    this.text2.setDisabled(true);
+                }
+                if(this.selectMenu1.getDataValue().length > 0){
+                    this.selectMenu.setDisabled(true);
+                }
+                
+            }if(this.radioSet4.getDataValue()==='YES'){
+                this.radioSet1.clear();
+                this.radioSet1.setRequired(true);
+                this.radioSet1.setDisabled(false);
+                this.bloodsugarlevelEditor1.setRequired(true);
+                this.bloodsugarlevelEditor1.setDisabled(false);
+                this.radioSet2.clear();
+                this.radioSet2.setRequired(true);
+                this.radioSet2.setDisabled(false);
+                this.checkboxSet1.clear();
+                this.checkboxSet1.setRequired(true);
+                this.checkboxSet1.setDisabled(false);
+                this.radioSet6.clear();
+                this.radioSet6.setRequired(true);
+                this.radioSet6.setDisabled(false);
+                this.radioSet5.clear();
+                this.radioSet5.setRequired(true);
+                this.radioSet5.setDisabled(false);
+                this.number1.setRequired(true);
+                this.number1.setDisabled(false);
+                if(this.text2.getDataValue().length > 0){
+                    this.text2.setDisabled(true);
+                }
+                if(this.selectMenu1.getDataValue().length > 0){
+                    this.selectMenu.setDisabled(true);
+                }
+            }
+		}catch(e){}
+	},
+	_end: 0
 });

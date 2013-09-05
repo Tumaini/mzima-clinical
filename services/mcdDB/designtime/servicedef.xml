@@ -142,7 +142,7 @@
             <element name="physicalexam" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="referral" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="avgdiastolicbloodpressure" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="avgdiastolicbloodpressure" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
             <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
             <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
@@ -159,7 +159,7 @@
             </element>
             <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="facility" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
             <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
@@ -175,7 +175,7 @@
             </element>
             <element name="serolinknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="insertby" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="insertby" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="insertdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
             <element name="clinician" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>

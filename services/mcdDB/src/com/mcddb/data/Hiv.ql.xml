@@ -3,9 +3,9 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<!-- Generated 08/29/2013 10:17:36
+<!-- Generated 08/29/2013 02:19:52
 
-Queries for entity: Sideeffects.
+Queries for entity: Hiv.
 
 @design.generated: Marks a generated query.
 
@@ -14,13 +14,13 @@ Queries for entity: Sideeffects.
 <hibernate-mapping>
 
     <query 
-        name="getSideeffectsById"
+        name="getHivById"
         comment="Example HQL Query
                  @design.generated">
                  
         <query-param name="id" type="java.lang.Integer"/>
 
-            from Sideeffects _a where _a.id=:id 
+            from Hiv _a where _a.id=:id 
 
     </query>
 

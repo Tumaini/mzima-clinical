@@ -10,7 +10,7 @@ dojo.declare("Project", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha20", 
+	"projectSubVersion": "Alpha29", 
 	"projectVersion": 1, 
 	"studioVersion": "6.5.0.RELEASE", 
 	"tabletMain": "", 
@@ -22,6 +22,7 @@ dojo.declare("Project", wm.Application, {
 		silkIconList: ["wm.ImageList", {"colCount":39,"height":16,"iconCount":90,"url":"lib/images/silkIcons/silk.png","width":16}, {}], 
 		clinician: ["wm.Variable", {"type":"StringData"}, {}], 
 		gender: ["wm.Variable", {"type":"StringData"}, {}], 
+		general: ["wm.Variable", {"type":"com.mcddb.data.ClinicalMain"}, {}], 
 		loggedInUser: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getUserId","service":"securityService"}, {}, {
 			input: ["wm.ServiceInput", {"type":"getUserIdInputs"}, {}]
 		}], 

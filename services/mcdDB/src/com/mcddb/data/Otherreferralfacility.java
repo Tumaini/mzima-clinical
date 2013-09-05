@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  mcdDB.Otherreferralfacility
- *  07/03/2013 16:36:57
+ *  08/29/2013 10:17:41
  * 
  */
 public class Otherreferralfacility {
@@ -14,7 +14,7 @@ public class Otherreferralfacility {
     private Integer id;
     private String serolinknumber;
     private String facility;
-    private Integer insertby;
+    private String insertby;
     private Date insertdate;
     private String clinician;
 
@@ -42,11 +42,11 @@ public class Otherreferralfacility {
         this.facility = facility;
     }
 
-    public Integer getInsertby() {
+    public String getInsertby() {
         return insertby;
     }
 
-    public void setInsertby(Integer insertby) {
+    public void setInsertby(String insertby) {
         this.insertby = insertby;
     }
 

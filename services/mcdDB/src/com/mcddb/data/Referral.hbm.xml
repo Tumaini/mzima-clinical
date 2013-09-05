@@ -1,27 +1,27 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.mcddb.data.Referral" table="referral" schema="public" dynamic-insert="false" dynamic-update="false">
+    <class name="com.mcddb.data.Referral" table="referral" dynamic-insert="false" dynamic-update="false">
         <id name="id" type="integer">
             <column name="id"/>
             <generator class="identity"/>
         </id>
         <property name="serolinknumber" type="string">
-            <column name="serolinknumber"/>
+            <column name="serolinknumber" length="20"/>
         </property>
         <property name="facility" type="string">
-            <column name="facility"/>
+            <column name="facility" length="50"/>
         </property>
         <property name="reason" type="string">
-            <column name="reason"/>
+            <column name="reason" length="200"/>
         </property>
         <property name="insertby" type="integer">
             <column name="insertby"/>
         </property>
         <property name="insertdate" type="date">
-            <column name="insertdate" length="13"/>
+            <column name="insertdate" length="10"/>
         </property>
         <property name="clinician" type="string">
-            <column name="clinician"/>
+            <column name="clinician" length="20"/>
         </property>
     </class>
 </hibernate-mapping>

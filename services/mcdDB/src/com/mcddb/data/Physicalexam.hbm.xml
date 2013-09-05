@@ -1,45 +1,45 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.mcddb.data.Physicalexam" table="physicalexam" schema="public" dynamic-insert="false" dynamic-update="false">
+    <class name="com.mcddb.data.Physicalexam" table="physicalexam" dynamic-insert="false" dynamic-update="false">
         <id name="id" type="integer">
             <column name="id"/>
             <generator class="identity"/>
         </id>
         <property name="serolinknumber" type="string">
-            <column name="serolinknumber"/>
+            <column name="serolinknumber" length="200"/>
         </property>
         <property name="headandneck" type="string">
-            <column name="headandneck"/>
+            <column name="headandneck" length="200"/>
         </property>
         <property name="ent" type="string">
-            <column name="ent"/>
+            <column name="ent" length="200"/>
         </property>
         <property name="skinandappendages" type="string">
-            <column name="skinandappendages"/>
+            <column name="skinandappendages" length="200"/>
         </property>
         <property name="respiratory" type="string">
-            <column name="respiratory"/>
+            <column name="respiratory" length="200"/>
         </property>
         <property name="cardiovascular" type="string">
-            <column name="cardiovascular"/>
+            <column name="cardiovascular" length="200"/>
         </property>
         <property name="abdomen" type="string">
-            <column name="abdomen"/>
+            <column name="abdomen" length="200"/>
         </property>
         <property name="cns" type="string">
-            <column name="cns"/>
+            <column name="cns" length="200"/>
         </property>
         <property name="limbsandmusculoskeletal" type="string">
-            <column name="limbsandmusculoskeletal"/>
+            <column name="limbsandmusculoskeletal" length="200"/>
         </property>
         <property name="insertby" type="integer">
             <column name="insertby"/>
         </property>
         <property name="insertdate" type="date">
-            <column name="insertdate" length="13"/>
+            <column name="insertdate" length="10"/>
         </property>
         <property name="clinician" type="string">
-            <column name="clinician"/>
+            <column name="clinician" length="20"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  mcdDB.Hypertension
- *  07/03/2013 16:36:57
+ *  08/29/2013 10:17:41
  * 
  */
 public class Hypertension {
@@ -20,7 +20,7 @@ public class Hypertension {
     private String physicalexam;
     private String referral;
     private String serolinknumber;
-    private Double avgdiastolicbloodpressure;
+    private String avgdiastolicbloodpressure;
     private Integer insertby;
     private Date insertdate;
     private String clinician;
@@ -97,11 +97,11 @@ public class Hypertension {
         this.serolinknumber = serolinknumber;
     }
 
-    public Double getAvgdiastolicbloodpressure() {
+    public String getAvgdiastolicbloodpressure() {
         return avgdiastolicbloodpressure;
     }
 
-    public void setAvgdiastolicbloodpressure(Double avgdiastolicbloodpressure) {
+    public void setAvgdiastolicbloodpressure(String avgdiastolicbloodpressure) {
         this.avgdiastolicbloodpressure = avgdiastolicbloodpressure;
     }
 

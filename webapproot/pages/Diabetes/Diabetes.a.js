@@ -52,12 +52,72 @@ dataValue: true
 } catch (f) {}
 app.toHypertension.update();
 },
+radioSet4Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+try{
+if(this.radioSet4.getDataValue()==='NO'){
+this.radioSet1.setDataValue('NOT TESTED');
+this.radioSet1.setRequired(false);
+this.radioSet1.setDisabled(true);
+this.bloodsugarlevelEditor1.setRequired(false);
+this.bloodsugarlevelEditor1.setDisabled(true);
+this.radioSet2.setDataValue('NO');
+this.radioSet2.setRequired(false);
+this.radioSet2.setDisabled(true);
+this.checkboxSet1.setDataValue('NONE');
+this.checkboxSet1.setRequired(false);
+this.checkboxSet1.setDisabled(true);
+this.radioSet6.setDataValue('NO');
+this.radioSet6.setRequired(false);
+this.radioSet6.setDisabled(true);
+this.radioSet5.setDataValue('NO');
+this.radioSet5.setRequired(false);
+this.radioSet5.setDisabled(true);
+this.number1.setRequired(false);
+this.number1.setDisabled(true);
+if(this.text2.getDataValue().length > 0){
+this.text2.setDisabled(true);
+}
+if(this.selectMenu1.getDataValue().length > 0){
+this.selectMenu.setDisabled(true);
+}
+}if(this.radioSet4.getDataValue()==='YES'){
+this.radioSet1.clear();
+this.radioSet1.setRequired(true);
+this.radioSet1.setDisabled(false);
+this.bloodsugarlevelEditor1.setRequired(true);
+this.bloodsugarlevelEditor1.setDisabled(false);
+this.radioSet2.clear();
+this.radioSet2.setRequired(true);
+this.radioSet2.setDisabled(false);
+this.checkboxSet1.clear();
+this.checkboxSet1.setRequired(true);
+this.checkboxSet1.setDisabled(false);
+this.radioSet6.clear();
+this.radioSet6.setRequired(true);
+this.radioSet6.setDisabled(false);
+this.radioSet5.clear();
+this.radioSet5.setRequired(true);
+this.radioSet5.setDisabled(false);
+this.number1.setRequired(true);
+this.number1.setDisabled(false);
+if(this.text2.getDataValue().length > 0){
+this.text2.setDisabled(true);
+}
+if(this.selectMenu1.getDataValue().length > 0){
+this.selectMenu.setDisabled(true);
+}
+}
+}catch(e){}
+},
 _end: 0
 });
 
 Diabetes.widgets = {
-diabetesLiveVariable1: ["wm.LiveVariable", {"type":"com.mcddb.data.Diabetes"}, {}, {
-liveView: ["wm.LiveView", {"dataType":"com.mcddb.data.Diabetes","view":[{"caption":"Id","sortable":true,"dataIndex":"id","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},{"caption":"Wanttoknowresult","sortable":true,"dataIndex":"wanttoknowresult","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},{"caption":"Bloodsugarlevel","sortable":true,"dataIndex":"bloodsugarlevel","type":"java.lang.Double","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},{"caption":"Knowndiabetic","sortable":true,"dataIndex":"knowndiabetic","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},{"caption":"Ontreatment","sortable":true,"dataIndex":"ontreatment","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},{"caption":"Symptoms","sortable":true,"dataIndex":"symptoms","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},{"caption":"Physicalexam","sortable":true,"dataIndex":"physicalexam","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},{"caption":"Referred","sortable":true,"dataIndex":"referred","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},{"caption":"Serolinknumber","sortable":true,"dataIndex":"serolinknumber","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},{"caption":"Insertby","sortable":true,"dataIndex":"insertby","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null},{"caption":"Insertdate","sortable":true,"dataIndex":"insertdate","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":10,"subType":null},{"caption":"Clinician","sortable":true,"dataIndex":"clinician","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":11,"subType":null}]}, {}]
+diabetesLiveVariable1: ["wm.LiveVariable", {"orderBy":"desc:insertdate","type":"com.mcddb.data.Diabetes"}, {}, {
+liveView: ["wm.LiveView", {"dataType":"com.mcddb.data.Diabetes","view":[{"caption":"Id","sortable":true,"dataIndex":"id","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},{"caption":"Wanttoknowresult","sortable":true,"dataIndex":"wanttoknowresult","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},{"caption":"Bloodsugarlevel","sortable":true,"dataIndex":"bloodsugarlevel","type":"java.lang.Double","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},{"caption":"Knowndiabetic","sortable":true,"dataIndex":"knowndiabetic","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},{"caption":"Ontreatment","sortable":true,"dataIndex":"ontreatment","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},{"caption":"Symptoms","sortable":true,"dataIndex":"symptoms","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},{"caption":"Physicalexam","sortable":true,"dataIndex":"physicalexam","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},{"caption":"Referred","sortable":true,"dataIndex":"referred","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},{"caption":"Serolinknumber","sortable":true,"dataIndex":"serolinknumber","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},{"caption":"Insertby","sortable":true,"dataIndex":"insertby","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null},{"caption":"Insertdate","sortable":true,"dataIndex":"insertdate","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":10,"subType":null},{"caption":"Clinician","sortable":true,"dataIndex":"clinician","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":11,"subType":null}]}, {}],
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"seroNo.dataValue","targetProperty":"filter.serolinknumber"}, {}]
+}]
 }],
 layoutBox1: ["wm.Layout", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 CLINICAL: ["wm.Panel", {"height":"100%","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
@@ -78,6 +138,7 @@ panel2: ["wm.Panel", {"height":"24px","horizontalAlign":"left","layoutKind":"lef
 dojoMenu1: ["wm.DojoMenu", {"_classes":{"domNode":["ClickableDojoMenu"]},"fullStructure":[{"label":"GENERAL","separator":undefined,"defaultLabel":"GENERAL","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toGeneral","children":[]},{"label":"HIV","separator":undefined,"defaultLabel":"HIV","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toHIV","children":[]},{"label":"TB","separator":undefined,"defaultLabel":"TB","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toTB","children":[]},{"label":"DIABETES","separator":undefined,"defaultLabel":"DIABETES","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toDiabetes","children":[]},{"label":"HYPERTENSION","separator":undefined,"defaultLabel":"HYPERTENSION","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toHypertension","children":[]},{"label":"CVD'S","separator":undefined,"defaultLabel":"CVD'S","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toCVD","children":[]},{"label":"CERVICAL CANCER","separator":undefined,"defaultLabel":"CERVICAL CANCER","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toCancer","children":[]},{"label":"MORE","separator":undefined,"defaultLabel":"MORE","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":undefined,"children":[{"label":"PHYSICAL EXAM","separator":undefined,"defaultLabel":"PHYSICAL EXAM","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toPhysExam","children":[]},{"label":"PHARMACOVIGILANCE","separator":undefined,"defaultLabel":"PHARMACOVIGILANCE","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toPharma","children":[]},{"label":"REFERRAL","separator":undefined,"defaultLabel":"REFERRAL","iconClass":undefined,"imageList":undefined,"idInPage":undefined,"isCheckbox":false,"onClick":"app.toReferral","children":[]}]}],"localizationStructure":{},"transparent":false}, {}]
 }],
 label3: ["wm.Label", {"caption":">>DIABETES","padding":"4","styles":{"fontWeight":"bold","backgroundColor":"#ffffff"}}, {}],
+seroNo: ["wm.Text", {"caption":"SEARCH BY SEROLINK NUMBER:","captionSize":"210px","changeOnKey":true,"dataValue":undefined,"displayValue":"","width":"400px"}, {}],
 panelContent: ["wm.MainContentPanel", {"autoScroll":true,"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
 diabetesLivePanel1: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
@@ -104,8 +165,9 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"diabetesDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
 }],
 idEditor1: ["wm.Number", {"caption":"Id","captionSize":"140px","changeOnKey":true,"dataValue":0,"desktopHeight":"26px","emptyValue":"zero","formField":"id","height":"26px","required":true,"showing":false,"width":"100%"}, {}],
+radioSet4: ["wm.RadioSet", {"caption":"Has the participant had blood sugar measurements taken?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"63px","displayField":"dataValue","displayValue":"","height":"63px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet4Change"}],
 text2: ["wm.Text", {"caption":"Sero Link Number","captionSize":"140px","dataValue":"","desktopHeight":"26px","emptyValue":"emptyString","formField":"serolinknumber","height":"26px","required":true,"width":"50%"}, {}],
-radioSet1: ["wm.RadioSet", {"caption":"Does participant want to know blood sugar results?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"wanttoknowresult","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {}],
+radioSet1: ["wm.RadioSet", {"caption":"Does participant want to know blood sugar results?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"82px","displayField":"dataValue","formField":"wanttoknowresult","height":"82px","options":"YES,NO,NOT TESTED","required":true,"width":"100%"}, {}],
 bloodsugarlevelEditor1: ["wm.Number", {"caption":"Participant’s blood sugar level (mmol/L)","captionSize":"300px","changeOnKey":true,"dataValue":0,"desktopHeight":"26px","emptyValue":"zero","formField":"bloodsugarlevel","height":"26px","required":true,"width":"50%"}, {}],
 radioSet2: ["wm.RadioSet", {"caption":"Is participant a known diabetic patient?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"knowndiabetic","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {"onchange":"radioSet2Change"}],
 radioSet3: ["wm.RadioSet", {"caption":"If ‘yes’ is the participant on treatment (Diet and/or medication)?","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"76px","displayField":"dataValue","formField":"ontreatment","height":"76px","options":"YES,NO","showing":false,"width":"100%"}, {}],
@@ -117,7 +179,7 @@ wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"defaultInsert"}, 
 checkboxSet1: ["wm.CheckboxSet", {"caption":"If the participant has abnormal blood sugar ask if she/he has any of the following symptoms?","captionSize":"140px","dataField":"dataValue","desktopHeight":"161px","displayField":"dataValue","emptyValue":"null","formField":"symptoms","height":"161px","options":"Polyuria,Polydypsia,Pruritus vulvae (women only),Weight loss,Lethargy,NONE","required":true,"width":"100%"}, {"onchange":"checkboxSet1Change"}],
 radioSet6: ["wm.RadioSet", {"caption":"Physicalexam","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"physicalexam","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {}],
 radioSet5: ["wm.RadioSet", {"caption":"Referred","captionSize":"140px","dataField":"dataValue","dataValue":undefined,"desktopHeight":"56px","displayField":"dataValue","formField":"referred","height":"56px","options":"YES,NO","required":true,"width":"100%"}, {}],
-number1: ["wm.Number", {"caption":"Insertby","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"insertby","height":"26px","width":"100%"}, {}, {
+number1: ["wm.Number", {"caption":"Insertby","captionSize":"140px","desktopHeight":"26px","disabled":true,"emptyValue":"null","formField":"insertby","height":"26px","width":"50%"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"app.loggedInUser.dataValue","targetProperty":"defaultInsert"}, {}]
 }]

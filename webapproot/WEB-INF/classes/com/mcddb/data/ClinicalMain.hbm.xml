@@ -1,15 +1,15 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.mcddb.data.ClinicalMain" table="clinical_main" schema="public" dynamic-insert="false" dynamic-update="false">
+    <class name="com.mcddb.data.ClinicalMain" table="clinical_main" dynamic-insert="false" dynamic-update="false">
         <id name="id" type="integer">
             <column name="id"/>
             <generator class="identity"/>
         </id>
         <property name="date" type="date">
-            <column name="date" length="13"/>
+            <column name="date" length="10"/>
         </property>
         <property name="serolinknumber" type="string">
-            <column name="serolinknumber"/>
+            <column name="serolinknumber" length="20"/>
         </property>
         <property name="age" type="integer">
             <column name="age"/>
@@ -18,22 +18,22 @@
             <column name="gender" length="1"/>
         </property>
         <property name="bmi" type="double">
-            <column name="bmi" precision="17"/>
+            <column name="bmi" precision="22"/>
         </property>
         <property name="clinicalcomplaint" type="string">
-            <column name="clinicalcomplaint"/>
+            <column name="clinicalcomplaint" length="20"/>
         </property>
         <property name="pregnant" type="string">
-            <column name="pregnant"/>
+            <column name="pregnant" length="20"/>
         </property>
         <property name="insertby" type="integer">
             <column name="insertby"/>
         </property>
         <property name="insertdate" type="date">
-            <column name="insertdate" length="13"/>
+            <column name="insertdate" length="10"/>
         </property>
         <property name="clinician" type="string">
-            <column name="clinician"/>
+            <column name="clinician" length="20"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -41,7 +41,21 @@ dojo.declare("Pharmacovigilance", wm.Page, {
     checkboxSet1Change: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
         try {
             if (this.checkboxSet1.getDataValue() == 'OTHERS') {
-                this.designableDialog2.show();
+                this.designableDialog2.show(); 
+                this.sideeffectoutcomesLiveForm1.beginDataInsert();
+            var patientId;
+            if (app.participantVar.getValue() === null || app.participantVar.getValue() === undefined) {
+               
+                patientId = this.serolinknumberEditor1.getDataValue();
+                this.text2.setDataValue(patientId);
+                this.text2.setDisabled(true);
+                this.clinician1.setDisabled(false);
+            } else {
+                patientId = app.participantVar.getValue("dataValue");
+                this.text2.setDataValue(patientId);
+                this.text2.setDisabled(true);
+                this.clinician1.setDisabled(false);
+            }
             }
         } catch (e) {}
     },
@@ -217,13 +231,19 @@ dojo.declare("Pharmacovigilance", wm.Page, {
             this.sideeffectoutcomesLiveForm1.beginDataInsert();
             var patientId;
             if (app.participantVar.getValue() === null || app.participantVar.getValue() === undefined) {
+               
                 patientId = this.serolinknumberEditor1.getDataValue();
+                this.text2.setDataValue(patientId);
+                this.text2.setDisabled(true);
                 this.clinician1.setDisabled(false);
             } else {
                 patientId = app.participantVar.getValue("dataValue");
+                this.text2.setDataValue(patientId);
+                this.text2.setDisabled(true);
+                this.clinician1.setDisabled(false);
             }
-            this.text2.setDataValue(patientId);
-            this.text2.setDisabled(true);
+            
+            
 
         } catch (e) {
             console.error('ERROR IN newButton1Click: ' + e);

@@ -1,39 +1,39 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.mcddb.data.Cvd" table="cvd" schema="public" dynamic-insert="false" dynamic-update="false">
+    <class name="com.mcddb.data.Cvd" table="cvd" dynamic-insert="false" dynamic-update="false">
         <id name="id" type="integer">
             <column name="id"/>
             <generator class="identity"/>
         </id>
         <property name="serolinknumber" type="string">
-            <column name="serolinknumber"/>
+            <column name="serolinknumber" length="20"/>
         </property>
         <property name="knowncvcondition" type="string">
-            <column name="knowncvcondition"/>
+            <column name="knowncvcondition" length="20"/>
         </property>
         <property name="intreatment" type="string">
-            <column name="intreatment"/>
+            <column name="intreatment" length="20"/>
         </property>
         <property name="riskfactors" type="string">
-            <column name="riskfactors"/>
+            <column name="riskfactors" length="20"/>
         </property>
         <property name="symptoms" type="string">
-            <column name="symptoms"/>
+            <column name="symptoms" length="20"/>
         </property>
         <property name="physicalexam" type="string">
-            <column name="physicalexam"/>
+            <column name="physicalexam" length="20"/>
         </property>
         <property name="referral" type="string">
-            <column name="referral"/>
+            <column name="referral" length="20"/>
         </property>
         <property name="insertby" type="integer">
             <column name="insertby"/>
         </property>
         <property name="insertdate" type="date">
-            <column name="insertdate" length="13"/>
+            <column name="insertdate" length="10"/>
         </property>
         <property name="clinician" type="string">
-            <column name="clinician"/>
+            <column name="clinician" length="20"/>
         </property>
     </class>
 </hibernate-mapping>

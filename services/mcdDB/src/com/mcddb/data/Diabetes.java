@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  mcdDB.Diabetes
- *  07/03/2013 16:36:57
+ *  08/29/2013 10:17:41
  * 
  */
 public class Diabetes {

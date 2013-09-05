@@ -654,7 +654,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Double"
+					"type": "java.lang.String"
 				},
 				"avgsystolicbloodpressure": {
 					"exclude": [],
@@ -821,7 +821,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Integer"
+					"type": "java.lang.String"
 				},
 				"insertdate": {
 					"exclude": [],
@@ -878,7 +878,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Integer"
+					"type": "java.lang.String"
 				},
 				"insertdate": {
 					"exclude": [],

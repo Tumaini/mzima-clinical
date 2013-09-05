@@ -10,7 +10,7 @@ dojo.declare("Project", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha17", 
+	"projectSubVersion": "Alpha29", 
 	"projectVersion": 1, 
 	"studioVersion": "6.5.0.RELEASE", 
 	"tabletMain": "", 
